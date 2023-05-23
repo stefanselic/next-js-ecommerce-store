@@ -1,26 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '../../database/products';
+import { quantity } from '../products/[productId]/QuantityButton';
 
 export const metadata = {
-  title: 'Products Page',
-  description: 'My favorite products',
+  title: 'Products',
+  description: 'My products',
 };
 
-export default function AnimalsPage() {
+export default function ProductsPage() {
   return (
     <main>
-      This are my products
       {products.map((product) => {
         return (
           <div key={`data-test-div${product.id}`}>
-            <Link href={`/products/${product.name}`}>{product.name}</Link>
+            <Link
+              href={`/products/${product.id}`}
+              data-test-id={`product-${product.id}`}
+            >
+              {product.name}
+            </Link>
             <br />
             <br />
-            {/* {product.price}
-            <br /> */}
-            {/* <Link href="/product">{product.name}</Link> */}
             <Image
+              alt="change to something LATER"
               src={`/images/${product.name}.png`}
               width={200}
               height={200}

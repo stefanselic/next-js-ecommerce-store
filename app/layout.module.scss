@@ -1,0 +1,38 @@
+.navigator {
+  background-color: #161515;
+  display: flex;
+  justify-content: space-between;
+  // width: 100%;
+  max-width: 1440px;
+  font-weight: bold;
+  padding: 20px 40px;
+}
+
+.innerLeftLinksList {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.Link {
+  color: white;
+  text-decoration: none;
+}
+
+.Cart {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.CartCount {
+  margin: 0;
+}
