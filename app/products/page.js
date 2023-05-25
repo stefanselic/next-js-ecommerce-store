@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import styles from './page.module.scss';
 import { products } from '../../database/products';
 import { quantity } from '../products/[productId]/QuantityButton';
 
@@ -10,7 +11,7 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <main>
+    <main className={styles.container}>
       {products.map((product) => {
         return (
           <div key={`data-test-div${product.id}`}>
@@ -20,10 +21,7 @@ export default function ProductsPage() {
             >
               {product.name}
             </Link>
-            <br />
-            <br />
             <Image
-              alt="change to something LATER"
               src={`/images/${product.name}.png`}
               width={200}
               height={200}

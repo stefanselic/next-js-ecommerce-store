@@ -29,7 +29,7 @@ export default function ProductPage({ params }) {
       <div>
         <h1>{singleProduct.name}</h1>
         <p data-test-id="product-price">{singleProduct.price}</p>
-        <CartItemControls />
+        <CartItemControls product={singleProduct} />
         <p className={styles.product_description}>
           {singleProduct.description}
         </p>
