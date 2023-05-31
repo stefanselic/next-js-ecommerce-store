@@ -3,7 +3,9 @@ import './globals.scss';
 import style from './layout.module.scss';
 import { Inter } from 'next/font/google';
 import { products } from '../database/products';
-import cart from '../public/images/cart-icon.png';
+import { getCookie } from '../app/utils/cookies';
+import { parseJson } from './utils/json';
+// import { createUpdateCart } from './products/[productId]/actions';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,6 +15,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const myCookieValue = getCookie('cart');
+  const cartQuantity = !myCookieValue ? [] : parseJson(myCookieValue);
+  const totalQuantity = cartQuantity.reduce(
+    (accum, allItems) => accum + allItems.quantity,
+    0,
+  );
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -40,7 +49,7 @@ export default function RootLayout({ children }) {
           </ul>
           <div className={style.Cart}>
             <Link href="/cart">Cart</Link>
-            <p className={style.CartCount}>{Math.floor(Math.random() * 10)}</p>
+            <p>{totalQuantity}</p>
           </div>
         </nav>
         {children}

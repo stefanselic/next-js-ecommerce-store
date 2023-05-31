@@ -1,10 +1,11 @@
 'use client';
 
 export default function QuantityButton(props) {
+  // The increaseQuantity function increments the quantity by 1 by calling props.setQuantity with props.quantity + 1 as the argument.
   function increaseQuantity() {
     props.setQuantity(props.quantity + 1);
   }
-
+  // decreaseQuantity function decrements the quantity by 1 by calling props.setQuantity with props.quantity - 1 as the argument.
   function decreaseQuantity() {
     if (props.quantity > 1) {
       props.setQuantity(props.quantity - 1);

@@ -21,7 +21,7 @@ export default function ProductPage({ params }) {
     <main className={styles.product}>
       <Image
         data-test-id="product-image"
-        alt="change to something LATER"
+        alt="product"
         src={`/images/${singleProduct.name}.png`}
         width={300}
         height={300}

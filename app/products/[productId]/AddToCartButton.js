@@ -8,8 +8,8 @@ export function AddToCartButton(props) {
   return (
     <form>
       <button
+        // Within the function, the router object's refresh method is called, which refreshes the page. Then, the createUpdateCart function is called with the props.product.id and props.quantity as arguments.
         formAction={async () => {
-          console.log('it works');
           router.refresh();
           await createUpdateCart(props.product.id, props.quantity);
         }}
@@ -17,10 +17,9 @@ export function AddToCartButton(props) {
       >
         Add to cart
       </button>
+      <h3>
+        {/* Product {props.product.name} - Total items:{props.quantity} */}
+      </h3>
     </form>
   );
 }
-
-/*
-{ id: props.product.id, productName: props.product.name, quantity: props.quantity }
-*/

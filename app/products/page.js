@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
 import { products } from '../../database/products';
-import { quantity } from '../products/[productId]/QuantityButton';
 
 export const metadata = {
   title: 'Products',

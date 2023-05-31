@@ -15,7 +15,7 @@ export default function GenerateButton() {
     const allCookies = document.cookie;
 
     const buttonColor = allCookies;
-    console.log(document.cookie);
+    // console.log(document.cookie);
 
     setColor(buttonColor);
   }, []);
