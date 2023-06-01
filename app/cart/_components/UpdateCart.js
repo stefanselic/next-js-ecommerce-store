@@ -9,7 +9,9 @@ export function UpdateCart(props) {
         productId={props.cart.id}
         quantity={props.cart.quantity}
       />
-      <DeleteCartItem id={props.cart.id} />
+      <div>
+        <DeleteCartItem id={props.cart.id} />
+      </div>
     </>
     // DeleteCartItem component is rendered with an id prop taken from props.cart.id
   );

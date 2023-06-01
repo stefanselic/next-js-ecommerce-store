@@ -1,3 +1,20 @@
+.totalBalance {
+  display: flex;
+  justify-content: center;
+}
+
+.productsContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.productsInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: center;
+}
+
 .images {
   align-items: center;
   gap: 32px;
