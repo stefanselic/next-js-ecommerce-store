@@ -1,8 +1,3 @@
-// server side code only run in server components
-// import fs from 'node:fs';
-
-// fs.readFile('../app/page.js', () => {});
-
 export const products = [
   {
     id: 1,

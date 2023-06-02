@@ -5,6 +5,8 @@ import { Inter } from 'next/font/google';
 import { products } from '../database/products';
 import { getCookie } from '../app/utils/cookies';
 import { parseJson } from './utils/json';
+import Image from 'next/image';
+import cartIcon from '../public/images/cart-icon-2.png';
 // import { createUpdateCart } from './products/[productId]/actions';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -47,10 +49,12 @@ export default function RootLayout({ children }) {
               </Link>
             </li>
           </ul>
-          <div className={style.Cart}>
-            <Link href="/cart">Cart</Link>
-            <p>{totalQuantity}</p>
-          </div>
+          <Link href="/cart">
+            <div className={style.Cart}>
+              <Image src={cartIcon} alt="cart icon" fill />
+              <div className={style.cartCircle}>{totalQuantity}</div>
+            </div>
+          </Link>
         </nav>
         {children}
       </body>

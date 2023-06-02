@@ -26,7 +26,8 @@ export default function ProductPage({ params }) {
         width={300}
         height={300}
       />
-      <div>
+      <div className={styles.productInfoContainer}>
+        <h2>MY VITAMINS</h2>
         <h1>{singleProduct.name}</h1>
         <p data-test-id="product-price">{singleProduct.price}</p>
         <CartItemControls product={singleProduct} />

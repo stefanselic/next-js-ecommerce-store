@@ -21,14 +21,14 @@ export default async function CartPage() {
   }, 0);
 
   return (
-    <main>
+    <main className={styles.cartPage}>
       {cartObject.map((cartItem) => (
         // For each cartItem, it renders a <div> element.
         <div
           className={styles.productsContainer}
           key={`cartitem-div-${cartItem.id}`}
         >
-          <div>
+          <div className={styles.imageContainer}>
             <Image
               data-test-id="product-image"
               alt="product"
@@ -38,27 +38,36 @@ export default async function CartPage() {
             />
           </div>
           <div className={styles.productsInfoContainer}>
-            <div>
-              <b>{cartItem.name}</b>
+            <div className={styles.productsInfoRow}>
+              <div>
+                <b>{cartItem.name}</b>
+              </div>
+              <div>
+                Product-Balance: <b>{calculateTotalProductsPrice(cartItem)}</b>
+              </div>
             </div>
             <div>{cartItem.price}</div>
-            {/* <div>{cartItem.quantity}</div> */}
             <div>
               <UpdateCart cart={cartItem} />
             </div>
-            <div>
-              Product-Balance: <b>{calculateTotalProductsPrice(cartItem)}</b>
-            </div>
           </div>
-          {/* <div>Total Balance: {calculateTotalPrice(cartItem)}</div> */}
         </div>
         // It renders an <UpdateCart> component, passing the cartItem as the cart prop.
       ))}
-      <div className={styles.totalBalance}>
-        Total Balance: <b>{totalPrice}</b>
+      <div data-test-id="cart-total" className={styles.totalBalance}>
+        <b>Total Balance:</b>
+        <b>{totalPrice}</b>
       </div>
       <div className={styles.images}>
-        <Link href="/cart/checkout">Checkout</Link>
+        <button
+          href="/cart/checkout"
+          className={styles.checkOutButton}
+          data-test-id="cart-checkout"
+        >
+          <Link className={styles.link} href="/cart/checkout">
+            Checkout
+          </Link>
+        </button>
       </div>
     </main>
   );

@@ -1,4 +1,47 @@
-.input {
+.checkoutForm {
+  background: lightgrey;
+  width: 500px;
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 64px;
+}
+
+.heading {
+  padding-bottom: 8px;
+}
+
+.row {
   display: flex;
-  align-items: column;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.label {
+  flex-grow: 1;
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.confirmOrderButton {
+  color: white;
+  background: rgb(31, 246, 31);
+  padding: 20px 40px;
+  margin: 20px 0 auto;
+  border: none;
+  text-decoration: none;
+}
+
+.confirmOrderButton:hover {
+  background: rgb(103, 165, 103);
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }

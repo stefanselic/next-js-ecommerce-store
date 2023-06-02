@@ -14,17 +14,22 @@ export default function ProductsPage() {
       {products.map((product) => {
         return (
           <div key={`data-test-div${product.id}`}>
-            <Link
-              href={`/products/${product.id}`}
-              data-test-id={`product-${product.id}`}
-            >
-              {product.name}
-            </Link>
-            <Image
-              src={`/images/${product.name}.png`}
-              width={200}
-              height={200}
-            />
+            <div>
+              <Link
+                className={styles.link}
+                href={`/products/${product.id}`}
+                data-test-id={`product-${product.id}`}
+              >
+                {product.name}
+              </Link>
+            </div>
+            <div>
+              <Image
+                src={`/images/${product.name}.png`}
+                width={200}
+                height={200}
+              />
+            </div>
           </div>
         );
       })}

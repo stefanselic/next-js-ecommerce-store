@@ -6,6 +6,7 @@ import { deleteCartItem } from '../actions';
 export function DeleteCartItem(props) {
   return (
     <button
+      data-test-id="cart-product-remove"
       onClick={async () => {
         await deleteCartItem(props.id);
       }}

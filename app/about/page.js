@@ -6,6 +6,7 @@ export default function AboutPage() {
         margin: '0 auto',
       }}
     >
+      <h2>MY VITAMINS</h2>
       <br />
       <p>
         Welcome to <b>MY VITAMINS</b>, your one-stop online shop for all your

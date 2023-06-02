@@ -1,5 +1,6 @@
 'use client';
 
+import styles from './AddToCartButton.module.scss';
 import { useRouter } from 'next/navigation';
 import { createUpdateCart } from './actions';
 
@@ -8,6 +9,7 @@ export function AddToCartButton(props) {
   return (
     <form>
       <button
+        className={styles.button}
         // Within the function, the router object's refresh method is called, which refreshes the page. Then, the createUpdateCart function is called with the props.product.id and props.quantity as arguments.
         formAction={async () => {
           router.refresh();
@@ -17,9 +19,6 @@ export function AddToCartButton(props) {
       >
         Add to cart
       </button>
-      <h3>
-        {/* Product {props.product.name} - Total items:{props.quantity} */}
-      </h3>
     </form>
   );
 }

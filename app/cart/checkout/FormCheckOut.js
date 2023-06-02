@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import styles from './FormCheckOut.module.scss';
 import { useState } from 'react';
 
@@ -16,32 +17,35 @@ export default function FormCheckout() {
   const [securityCode, setSecurityCode] = useState('');
 
   return (
-    <>
-      <h2>Contact Information</h2>
+    <div className={styles.checkoutForm}>
+      <h2 className={styles.heading}>Contact Information</h2>
       <form>
         <section>
-          <div className={styles.input}>
-            <label htmlFor="firstName">
+          <div className={styles.row}>
+            <label htmlFor="firstName" className={styles.label}>
               <input
                 data-test-id="checkout-first-name"
+                className={styles.input}
                 placeholder="First name*"
                 value={firstName}
                 onChange={(event) => setFirstName(event.currentTarget.value)}
               />
             </label>
-            <label htmlFor="lastName">
+            <label htmlFor="lastName" className={styles.label}>
               <input
                 data-test-id="checkout-last-name"
+                className={styles.input}
                 placeholder="Last name*"
                 value={lastName}
                 onChange={(event) => setLastName(event.currentTarget.value)}
               />
             </label>
           </div>
-          <div>
-            <label htmlFor="email">
+          <div className={styles.row}>
+            <label htmlFor="email" className={styles.label}>
               <input
                 data-test-id="checkout-email"
+                className={styles.input}
                 placeholder="E-Mail*"
                 value={email}
                 onChange={(event) => {
@@ -50,10 +54,11 @@ export default function FormCheckout() {
               />
             </label>
           </div>
-          <div>
-            <label htmlFor="adress">
+          <div className={styles.row}>
+            <label htmlFor="adress" className={styles.label}>
               <input
                 data-test-id="checkout-address"
+                className={styles.input}
                 placeholder="Adress*"
                 value={address}
                 onChange={(event) => {
@@ -62,10 +67,11 @@ export default function FormCheckout() {
               />
             </label>
           </div>
-          <div>
-            <label htmlFor="city">
+          <div className={styles.row}>
+            <label htmlFor="city" className={styles.label}>
               <input
                 data-test-id="checkout-city"
+                className={styles.input}
                 placeholder="City*"
                 value={city}
                 onChange={(event) => {
@@ -73,9 +79,10 @@ export default function FormCheckout() {
                 }}
               />
             </label>
-            <label htmlFor="postalCode">
+            <label htmlFor="postalCode" className={styles.label}>
               <input
                 data-test-id="checkout-postal-code"
+                className={styles.input}
                 placeholder="Postal Code*"
                 value={postalCode}
                 onChange={(event) => {
@@ -84,10 +91,11 @@ export default function FormCheckout() {
               />
             </label>
           </div>
-          <div>
-            <label htmlFor="country">
+          <div className={styles.row}>
+            <label htmlFor="country" className={styles.label}>
               <input
                 data-test-id="checkout-country"
+                className={styles.input}
                 placeholder="Country*"
                 value={country}
                 onChange={(event) => {
@@ -99,10 +107,11 @@ export default function FormCheckout() {
         </section>
         <h2>Payment Information</h2>
         <section>
-          <div>
-            <label htmlFor="creditCard">
+          <div className={styles.row}>
+            <label htmlFor="creditCard" className={styles.label}>
               <input
                 data-test-id="checkout-credit-card"
+                className={styles.input}
                 placeholder="Credit card*"
                 value={creditCard}
                 onChange={(event) => {
@@ -111,10 +120,11 @@ export default function FormCheckout() {
               />
             </label>
           </div>
-          <div>
-            <label htmlFor="expirationDate">
+          <div className={styles.row}>
+            <label htmlFor="expirationDate" className={styles.label}>
               <input
                 data-test-id="checkout-expiration-date"
+                className={styles.input}
                 placeholder="(MM/YY)*"
                 value={expirationDate}
                 onChange={(event) => {
@@ -122,9 +132,10 @@ export default function FormCheckout() {
                 }}
               />
             </label>
-            <label htmlFor="securityCode">
+            <label htmlFor="securityCode" className={styles.label}>
               <input
                 data-test-id="checkout-security-code"
+                className={styles.input}
                 placeholder="Security code*"
                 value={securityCode}
                 onChange={(event) => {
@@ -135,9 +146,16 @@ export default function FormCheckout() {
           </div>
         </section>
         <section>
-          <button data-test-id="checkout-confirm-order">Confirm Order</button>
+          <button
+            data-test-id="checkout-confirm-order"
+            className={styles.confirmOrderButton}
+          >
+            <Link className={styles.link} href="cart/checkout/thankyou">
+              Confirm Order
+            </Link>
+          </button>
         </section>
       </form>
-    </>
+    </div>
   );
 }

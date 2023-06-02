@@ -1,6 +1,19 @@
+.imageContainer {
+  margin: 16px;
+}
+
+.cartPage {
+  background: lightgrey;
+  padding: 50px;
+  min-height: calc(100vh - 80px - 20px - 20px);
+  box-sizing: border-box;
+  margin: 20px;
+}
+
 .totalBalance {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding-top: 30px;
 }
 
 .productsContainer {
@@ -13,6 +26,16 @@
   flex-direction: column;
   gap: 8px;
   align-self: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px 0;
+}
+
+.productsInfoRow {
+  display: flex;
+  justify-content: space-between;
 }
 
 .images {
@@ -21,4 +44,23 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+
+.checkOutButton {
+  color: white;
+  background: rgb(31, 246, 31);
+  padding: 20px 40px;
+  margin: 20px 0 0 auto;
+  border: none;
+  text-decoration: none;
+}
+
+.checkOutButton:hover {
+  background: rgb(103, 165, 103);
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }

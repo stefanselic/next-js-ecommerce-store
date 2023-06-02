@@ -1,5 +1,3 @@
-import Link from 'next/link';
-// import { products } from '../../../database/products';
 import FormCheckout from './FormCheckOut';
 
 export const metadata = {
