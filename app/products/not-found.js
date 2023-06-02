@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { products } from '../../database/products';
 
 export const rootNotFoundMetaData = {
   title: 'Product Found',

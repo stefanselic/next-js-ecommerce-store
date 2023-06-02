@@ -1,4 +1,6 @@
 import FormCheckout from './FormCheckOut';
+import CartPage from '../../cart/page';
+import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Checkout',
@@ -7,8 +9,13 @@ export const metadata = {
 
 export default function CheckOutPage() {
   return (
-    <main>
-      <FormCheckout />
+    <main className={styles.checkOutContainer}>
+      <div>
+        <FormCheckout />
+      </div>
+      <div className={styles.cart}>
+        <CartPage />
+      </div>
     </main>
   );
 }

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ThankYouPage() {
   return (
-    <div className={styles.pageContainer}>
+    <div>
       <main className={styles.infoContainer}>
         <div>
           <h1>Thank you for your order!</h1>
