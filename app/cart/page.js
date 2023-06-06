@@ -11,15 +11,18 @@ export const metadata = {
 
 export default async function CartPage() {
   const cartObject = await getCurrentProducts();
+  // console.log('cartObject:', cartObject);
+
+  // Get total of each product
   const calculateTotalProductsPrice = (cartItem) => {
     return cartItem.price * cartItem.quantity;
   };
-
+  // Get total of all products
   const totalPrice = cartObject.reduce((accumulator, cartItem) => {
     const totalItemPrice = calculateTotalProductsPrice(cartItem);
     return accumulator + totalItemPrice;
   }, 0);
-
+  // console.log('cartObject:', cartObject);
   return (
     <main className={styles.cartPage}>
       {cartObject.map((cartItem) => (

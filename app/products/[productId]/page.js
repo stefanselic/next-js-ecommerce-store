@@ -11,8 +11,10 @@ export const metadata = {
   description: 'My single product',
 };
 
-export default function ProductPage({ params }) {
-  const singleProduct = getProductById(Number(params.productId)); // Convert the string into an number
+export default async function ProductPage({ params }) {
+  // console.log('getProducts:', getProducts);
+  const singleProduct = await getProductById(Number(params.productId)); // Convert the string into an number
+  console.log('singleProduct:', singleProduct);
   if (!singleProduct) {
     notFound();
   }

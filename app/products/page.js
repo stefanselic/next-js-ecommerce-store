@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
-import { products } from '../../database/products';
+import { getProducts } from '../../database/products';
 
 export const metadata = {
   title: 'Products',
   description: 'My products',
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products = await getProducts();
   return (
     <main className={styles.container}>
       {products.map((product) => {

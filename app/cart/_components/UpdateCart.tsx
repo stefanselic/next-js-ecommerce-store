@@ -2,7 +2,16 @@ import { QuantityButtonServer } from './QuantityButtonServer';
 
 import { DeleteCartItem } from './DeleteItemFromCart';
 
-export function UpdateCart(props) {
+type Cart = {
+  id: number;
+  quantity: number;
+};
+
+type Props = {
+  cart: Cart;
+};
+
+export function UpdateCart(props: Props) {
   return (
     <>
       <QuantityButtonServer // QuantityButtonServer component is rendered with productId and quantity props taken from props.cart.id and props.cart.quantity

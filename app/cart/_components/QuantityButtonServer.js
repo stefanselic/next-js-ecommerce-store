@@ -1,7 +1,15 @@
 'use client';
+
+import { useEffect } from 'react';
 import { createUpdateCart } from '../../products/[productId]/actions';
+import { useRouter } from 'next/navigation';
 
 export function QuantityButtonServer(props) {
+  const router = useRouter();
+  useEffect(() => {
+    router.refresh();
+  }, [router]);
+
   return (
     <div>
       <button
