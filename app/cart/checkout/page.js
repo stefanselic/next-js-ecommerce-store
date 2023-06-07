@@ -1,5 +1,5 @@
 import FormCheckout from './FormCheckOut';
-import CartPage from '../../cart/page';
+import CartPage from '../page';
 import styles from './page.module.scss';
 
 export const metadata = {

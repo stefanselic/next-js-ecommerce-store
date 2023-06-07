@@ -4,7 +4,16 @@ import styles from './AddToCartButton.module.scss';
 import { useRouter } from 'next/navigation';
 import { createUpdateCart } from './actions';
 
-export function AddToCartButton(props) {
+type Product = {
+  id: number;
+};
+
+type Props = {
+  product: Product;
+  quantity: number;
+};
+
+export function AddToCartButton(props: Props) {
   const router = useRouter();
   return (
     <form>

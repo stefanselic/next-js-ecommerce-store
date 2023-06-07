@@ -4,7 +4,12 @@ import { useEffect } from 'react';
 import { createUpdateCart } from '../../products/[productId]/actions';
 import { useRouter } from 'next/navigation';
 
-export function QuantityButtonServer(props) {
+type Props = {
+  productId: number;
+  quantity: number;
+};
+
+export function QuantityButtonServer(props: Props) {
   const router = useRouter();
   useEffect(() => {
     router.refresh();
