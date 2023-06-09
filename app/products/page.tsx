@@ -11,30 +11,38 @@ export const metadata = {
 export default async function ProductsPage() {
   const products = await getProducts();
   return (
-    <main className={styles.container}>
-      {products.map((product) => {
-        return (
-          <div key={`data-test-div-${product.id}`}>
-            <div>
-              <Link
-                href={`/products/${product.id}`}
-                data-test-id={`product-${product.id}`}
-                className={styles.link}
-              >
-                {product.name}
-              </Link>
+    <>
+      <div className={styles.header}>
+        <h1>MY VITAMINS</h1>
+      </div>
+      <main className={styles.container}>
+        {products.map((product) => {
+          return (
+            <div
+              key={`product-div-${product.id}`}
+              className={styles.productContainer}
+            >
+              <div>
+                <Link
+                  data-test-id={`product-${product.id}`}
+                  href={`/products/${product.id}`}
+                  className={styles.link}
+                >
+                  {product.name}
+                  <div>
+                    <Image
+                      alt={product.name}
+                      src={`/images/${product.name}.png`}
+                      width={200}
+                      height={200}
+                    />
+                  </div>
+                </Link>
+              </div>
             </div>
-            <div>
-              <Image
-                alt={product.name}
-                src={`/images/${product.name}.png`}
-                width={200}
-                height={200}
-              />
-            </div>
-          </div>
-        );
-      })}
-    </main>
+          );
+        })}
+      </main>
+    </>
   );
 }

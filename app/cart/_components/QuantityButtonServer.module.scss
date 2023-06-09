@@ -1,0 +1,21 @@
+.decreaseQuantityButton {
+  padding: 4px 8px 4px 8px;
+  &:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+  }
+}
+
+.input {
+  width: 35px;
+  text-align: center;
+  padding: 4px 8px 4px 8px;
+}
+
+.increaseQuantityButton {
+  padding: 4px 8px 4px 8px;
+  &:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+  }
+}

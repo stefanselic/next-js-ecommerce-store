@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import QuantityButton from './QuantityButton';
-import { AddToCartButton } from './AddToCartButton';
+import QuantityButton from './_components/QuantityButton';
+import { AddToCartButton } from './_components/AddToCartButton';
 
 export default function CartItemControls(props) {
   const [quantity, setQuantity] = useState(1);

@@ -27,6 +27,7 @@ export default async function ProductPage(props: Props) {
     <main className={styles.product}>
       <Image
         data-test-id="product-image"
+        className={styles.productImage}
         alt="product"
         src={`/images/${singleProduct.name}.png`}
         width={300}

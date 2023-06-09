@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import './globals.scss';
 import style from './layout.module.scss';
 import { Inter } from 'next/font/google';
 import { getCookie } from '../app/utils/cookies';
@@ -34,8 +33,8 @@ export default function RootLayout({ children }) {
             </li>
             <li>
               <Link
-                className={style.Link}
                 data-test-id="products-link"
+                className={style.Link}
                 href="/products"
               >
                 Products
@@ -47,10 +46,12 @@ export default function RootLayout({ children }) {
               </Link>
             </li>
           </ul>
-          <Link href="/cart">
+          <Link data-test-id="cart-link" href="/cart">
             <div className={style.Cart}>
               <Image src={cartIcon} alt="cart icon" fill />
-              <div className={style.cartCircle}>{totalQuantity}</div>
+              <div data-test-id="cart-count" className={style.cartCircle}>
+                {totalQuantity}
+              </div>
             </div>
           </Link>
         </nav>

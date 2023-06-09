@@ -1,7 +1,7 @@
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'Thank you',
+  title: 'Thank you for your order',
   description: 'Thank you page',
 };
 

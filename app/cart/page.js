@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getCurrentProducts } from './actions';
 import { UpdateCart } from './_components/UpdateCart';
 import Image from 'next/image';
+import CheckOutButton from './CheckOutButton';
 
 export const metadata = {
   title: 'Cart',
@@ -11,7 +12,6 @@ export const metadata = {
 
 export default async function CartPage() {
   const cartObject = await getCurrentProducts();
-  // console.log('cartObject:', cartObject);
 
   // Get total of each product
   const calculateTotalProductsPrice = (cartItem) => {
@@ -22,14 +22,14 @@ export default async function CartPage() {
     const totalItemPrice = calculateTotalProductsPrice(cartItem);
     return accumulator + totalItemPrice;
   }, 0);
-  // console.log('cartObject:', cartObject);
   return (
     <main className={styles.cartPage}>
       {cartObject.map((cartItem) => (
         // For each cartItem, it renders a <div> element.
         <div
           className={styles.productsContainer}
-          key={`cartitem-div-${cartItem.id}`}
+          key={`cart-product-${cartItem.id}`}
+          data-test-id={`cart-product-${cartItem.id}`}
         >
           <div className={styles.imageContainer}>
             <Image
@@ -42,15 +42,14 @@ export default async function CartPage() {
           </div>
           <div className={styles.productsInfoContainer}>
             <div className={styles.productsInfoRow}>
-              <div>
-                <b>{cartItem.name}</b>
-              </div>
-              <div>
-                Product-Balance: <b>{calculateTotalProductsPrice(cartItem)}</b>
+              <div className={styles.productName}>{cartItem.name}</div>
+              <div className={styles.productBalance}>
+                <span>Balance: </span>
+                {calculateTotalProductsPrice(cartItem)}
               </div>
             </div>
             <div>{cartItem.price}</div>
-            <div>
+            <div className={styles.buttonContainer}>
               <UpdateCart cart={cartItem} />
             </div>
           </div>
@@ -62,15 +61,7 @@ export default async function CartPage() {
         <b>{totalPrice}</b>
       </div>
       <div className={styles.images}>
-        <button
-          href="/cart/checkout"
-          className={styles.checkOutButton}
-          data-test-id="cart-checkout"
-        >
-          <Link className={styles.link} href="/cart/checkout">
-            Checkout
-          </Link>
-        </button>
+        <CheckOutButton />
       </div>
     </main>
   );

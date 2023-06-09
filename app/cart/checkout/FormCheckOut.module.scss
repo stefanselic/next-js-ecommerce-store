@@ -28,20 +28,17 @@
 }
 
 .confirmOrderButton {
-  color: white;
-  background: rgb(31, 246, 31);
+  color: rgb(35, 35, 35);
+  background: #1ff61f;
+  font-size: 16px;
+  font-weight: bold;
   padding: 20px 40px;
-  margin: 20px 0 auto;
+  margin: 20px 0 0 auto;
   border: none;
   text-decoration: none;
-}
-
-.confirmOrderButton:hover {
-  background: rgb(103, 165, 103);
-}
-
-.link {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(35, 35, 35);
+    color: #e2e2e2;
+  }
 }

@@ -2,7 +2,7 @@
 
 import styles from './AddToCartButton.module.scss';
 import { useRouter } from 'next/navigation';
-import { createUpdateCart } from './actions';
+import { createUpdateCart } from '../actions';
 
 type Product = {
   id: number;

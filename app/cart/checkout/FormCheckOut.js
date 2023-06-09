@@ -1,10 +1,11 @@
 'use client';
 
-import Link from 'next/link';
 import styles from './FormCheckOut.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function FormCheckout() {
+  const router = useRouter();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -15,6 +16,51 @@ export default function FormCheckout() {
   const [creditCard, setCreditCard] = useState('');
   const [expirationDate, setExpirationDate] = useState('');
   const [securityCode, setSecurityCode] = useState('');
+  const [formValid, setFormValid] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const isFormValid =
+      firstName !== '' &&
+      lastName !== '' &&
+      email !== '' &&
+      address !== '' &&
+      city !== '' &&
+      postalCode !== '' &&
+      country !== '' &&
+      creditCard !== '' &&
+      expirationDate !== '' &&
+      securityCode !== '';
+
+    setFormValid(isFormValid);
+  }, [
+    firstName,
+    lastName,
+    email,
+    address,
+    city,
+    postalCode,
+    country,
+    creditCard,
+    expirationDate,
+    securityCode,
+  ]);
+
+  useEffect(() => {
+    if (formValid && submitted) {
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setAddress('');
+      setCity('');
+      setPostalCode('');
+      setCountry('');
+      setCreditCard('');
+      setExpirationDate('');
+      setSecurityCode('');
+      setSubmitted(false);
+    }
+  }, [formValid, submitted]);
 
   return (
     <div className={styles.checkoutForm}>
@@ -29,6 +75,7 @@ export default function FormCheckout() {
                 placeholder="First name*"
                 value={firstName}
                 onChange={(event) => setFirstName(event.currentTarget.value)}
+                required
               />
             </label>
             <label htmlFor="lastName" className={styles.label}>
@@ -112,7 +159,7 @@ export default function FormCheckout() {
               <input
                 data-test-id="checkout-credit-card"
                 className={styles.input}
-                placeholder="Credit card*"
+                placeholder="1234 1234 1234 1234*"
                 value={creditCard}
                 onChange={(event) => {
                   setCreditCard(event.currentTarget.value);
@@ -136,7 +183,7 @@ export default function FormCheckout() {
               <input
                 data-test-id="checkout-security-code"
                 className={styles.input}
-                placeholder="Security code*"
+                placeholder="456*"
                 value={securityCode}
                 onChange={(event) => {
                   setSecurityCode(event.currentTarget.value);
@@ -147,12 +194,13 @@ export default function FormCheckout() {
         </section>
         <section>
           <button
+            disabled={!formValid}
             data-test-id="checkout-confirm-order"
             className={styles.confirmOrderButton}
+            type="button"
+            onClick={() => router.push('/cart/checkout/thankyou')}
           >
-            <Link className={styles.link} href="cart/checkout/thankyou">
-              Confirm Order
-            </Link>
+            Confirm Order
           </button>
         </section>
       </form>

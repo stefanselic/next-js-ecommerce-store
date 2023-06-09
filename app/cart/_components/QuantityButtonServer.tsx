@@ -1,5 +1,6 @@
 'use client';
 
+import styles from './QuantityButtonServer.module.scss';
 import { useEffect } from 'react';
 import { createUpdateCart } from '../../products/[productId]/actions';
 import { useRouter } from 'next/navigation';
@@ -18,6 +19,7 @@ export function QuantityButtonServer(props: Props) {
   return (
     <div>
       <button
+        className={styles.decreaseQuantityButton}
         onClick={async () => {
           if (props.quantity > 1) {
             // It calls the createUpdateCart function with props.productId, 1, and true as arguments.
@@ -28,16 +30,14 @@ export function QuantityButtonServer(props: Props) {
         -
       </button>
       <input
-        data-test-id="product-quantity"
-        style={{
-          width: '35px',
-          textAlign: 'center',
-        }}
+        data-test-id={`cart-product-quantity-${props.productId}`}
+        className={styles.input}
         // Input is disabled - user cannot interact with. It displays the value of props.quantity.
         disabled
         value={props.quantity}
       />
       <button
+        className={styles.increaseQuantityButton}
         onClick={async () => {
           // It calls the createUpdateCart function with props.productId and 1 as arguments.
           await createUpdateCart(props.productId, 1);
