@@ -3,6 +3,7 @@ import { getCurrentProducts } from './actions';
 import { UpdateCart } from './_components/UpdateCart';
 import Image from 'next/image';
 import CheckOutButton from './CheckOutButton';
+import { cartSum } from '../utils/cartSum';
 
 export const metadata = {
   title: 'Cart',
@@ -12,15 +13,8 @@ export const metadata = {
 export default async function CartPage() {
   const cartObject = await getCurrentProducts();
 
-  // Get total of each product
-  const calculateTotalProductsPrice = (cartItem) => {
-    return cartItem.price * cartItem.quantity;
-  };
   // Get total of all products
-  const totalPrice = cartObject.reduce((accumulator, cartItem) => {
-    const totalItemPrice = calculateTotalProductsPrice(cartItem);
-    return accumulator + totalItemPrice;
-  }, 0);
+  const totalPrice = cartSum(cartObject);
   return (
     <main className={styles.cartPage}>
       {cartObject.map((cartItem) => (
@@ -44,7 +38,7 @@ export default async function CartPage() {
               <div className={styles.productName}>{cartItem.name}</div>
               <div className={styles.productBalance}>
                 <span>Balance: </span>
-                {calculateTotalProductsPrice(cartItem)}
+                {cartItem.price * cartItem.quantity}
               </div>
             </div>
             <div>{cartItem.price}</div>

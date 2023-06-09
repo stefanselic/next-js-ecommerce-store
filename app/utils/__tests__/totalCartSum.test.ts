@@ -1,24 +1,27 @@
-// import { expect, test } from '@jest/globals';
-// import totalprice from './testfunctions/totalCartSum';
+import { expect, test } from '@jest/globals';
+import { cartSum } from '../cartSum';
 
-// test('calculate the correct total sum', () => {
-//   const total = cartObject.reduce((accumulator, cartItem) => {
-//   const totalItemPrice = calculateTotalProductsPrice(cartItem);
-//   return accumulator + totalItemPrice;
-// }, 0);
-// });
+const mockedCart = [
+  {
+    id: 2,
+    name: 'vitamin-c',
+    price: 16,
+    description:
+      'Vitamin C is essential for the human body as it plays a vital role in immune function, helping to protect against infections and promote wound healing. It also acts as a powerful antioxidant, helping to neutralize harmful free radicals and protect cells from damage. Furthermore, vitamin C supports the production of collagen, a protein that is important for the health of skin, bones, and connective tissues.',
+    quantity: 2,
+  },
+  {
+    id: 3,
+    name: 'vitamin-d3',
+    price: 18,
+    description:
+      'Vitamin D3 is best known for strengthening your bones, which it does by helping the body absorb calcium and phosphorus from food. “But it also reduces inflammation, boosts the immune system, promotes heart health, and serves other important functions in the body,”',
+    quantity: 2,
+  },
+];
 
-// test('add two numbers together', () => {
-//   expect(add(1, 1)).toBe(2);
-//   expect(add(100, 100)).toBe(200);
-//   expect(add(12, 13)).toBe(25);
-// });
+test('calculate the correct total sum', () => {
+  const result = cartSum(mockedCart);
 
-// test('throws an error if arguments are not numbers', () => {
-//   // @ts-expect-error testing incorrect arguments
-//   expect(() => add(1, '1')).toThrow('Pass only numbers!');
-
-// const totalPrice = cartObject.reduce((accumulator, cartItem) => {
-//   const totalItemPrice = calculateTotalProductsPrice(cartItem);
-//   return accumulator + totalItemPrice;
-// }, 0);
+  expect(result).toBe(68);
+});
