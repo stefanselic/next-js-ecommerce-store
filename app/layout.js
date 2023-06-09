@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className={style.navigator}>
+        <header className={style.navigator}>
           <ul className={style.innerLeftLinksList}>
             <li>
               <Link className={style.Link} href="/">
@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           </Link>
-        </nav>
+        </header>
         {children}
       </body>
     </html>
