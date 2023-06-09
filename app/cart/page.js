@@ -1,5 +1,4 @@
 import styles from './page.module.scss';
-import Link from 'next/link';
 import { getCurrentProducts } from './actions';
 import { UpdateCart } from './_components/UpdateCart';
 import Image from 'next/image';
