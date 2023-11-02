@@ -2,6 +2,9 @@ import { config } from 'dotenv-safe';
 import { headers } from 'next/headers';
 import postgres, { Sql } from 'postgres';
 import 'server-only';
+import { setEnvironmentVariables } from '../app/utils/config.mjs';
+
+setEnvironmentVariables();
 
 if (!process.env.FLY_IO) config();
 // Making a simple connection to Postgres
