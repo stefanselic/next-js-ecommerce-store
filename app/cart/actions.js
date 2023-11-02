@@ -12,7 +12,7 @@ export async function getCurrentProducts() {
     ? []
     : // Otherwise, the parseJson function is used to parse the cookie value into a JavaScript object, and the result is assigned to productQuantity.
       parseJson(productQuantityCookie);
-  // We use the map method on productQuantity to iterate over each element. For each element, it calls getProductById with the id property of the element, spreads the returned product object, and adds a new property quantity with the value of element.quantity. The result is an array of mapped products.
+  // We use the map method on productQuantity to iterate over each element. For each element, it calls getProductById with the id property of the element, spreads the returned product object, and adds a new property quantity with the value of element.quantity. The result is an array of mapped products
 
   const mappedProductsPromises = productQuantity.map(async (element) => {
     const tempProduct = await getProductById(element.id);
