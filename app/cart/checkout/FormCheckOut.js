@@ -131,6 +131,7 @@ export default function FormCheckout() {
                 data-test-id="checkout-postal-code"
                 className={styles.input}
                 placeholder="Postal Code*"
+                type="number"
                 value={postalCode}
                 onChange={(event) => {
                   setPostalCode(event.currentTarget.value);
@@ -160,10 +161,15 @@ export default function FormCheckout() {
                 data-test-id="checkout-credit-card"
                 className={styles.input}
                 placeholder="1234 1234 1234 1234*"
+                type="number"
                 value={creditCard}
                 onChange={(event) => {
-                  setCreditCard(event.currentTarget.value);
+                  if (event.currentTarget.value.length <= 16) {
+                    setCreditCard(event.currentTarget.value);
+                  }
                 }}
+                minLength={16}
+                maxLength={16}
               />
             </label>
           </div>
@@ -173,21 +179,31 @@ export default function FormCheckout() {
                 data-test-id="checkout-expiration-date"
                 className={styles.input}
                 placeholder="(MM/YY)*"
+                type="number"
                 value={expirationDate}
                 onChange={(event) => {
-                  setExpirationDate(event.currentTarget.value);
+                  if (event.currentTarget.value.length <= 5) {
+                    setExpirationDate(event.currentTarget.value);
+                  }
                 }}
+                minLength={5}
+                maxLength={5}
               />
             </label>
             <label htmlFor="securityCode" className={styles.label}>
               <input
+                type="number"
                 data-test-id="checkout-security-code"
                 className={styles.input}
                 placeholder="456*"
                 value={securityCode}
                 onChange={(event) => {
-                  setSecurityCode(event.currentTarget.value);
+                  if (event.currentTarget.value.length <= 3) {
+                    setSecurityCode(event.currentTarget.value);
+                  }
                 }}
+                minLength={3}
+                maxLength="3"
               />
             </label>
           </div>
