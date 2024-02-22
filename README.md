@@ -1,4 +1,4 @@
-<h1>Welcome to the next-js-ecommerce-store wiki!</h1>
+<h1>Next.JS e-commerce store</h1>
 
 <img width="1439" alt="Bildschirmfoto 2023-06-12 um 11 19 57" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/06351861-6a69-4ee8-92d7-44b75f979dea">
 
