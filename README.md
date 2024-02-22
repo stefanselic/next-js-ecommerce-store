@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Welcome to the next-js-ecommerce-store wiki!
+<img width="1439" alt="Bildschirmfoto 2023-06-12 um 11 19 57" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/06351861-6a69-4ee8-92d7-44b75f979dea">
+<img width="1438" alt="Bildschirmfoto 2023-06-12 um 11 20 09" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/0e21a101-7270-4a56-9a0d-c6d66389f032">
+<img width="1437" alt="Bildschirmfoto 2023-06-12 um 11 20 24" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/bd0de8a4-8fb0-46de-80e9-29abbec20c87">
+<img width="1437" alt="Bildschirmfoto 2023-06-12 um 11 20 41" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/8fb0919a-5b44-4d67-9e30-99b9862c7841">
+<img width="1438" alt="Bildschirmfoto 2023-06-12 um 11 20 52" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/16b6e8e0-ece8-4c78-ab99-434bf7010811">
+<img width="1426" alt="Bildschirmfoto 2023-06-12 um 11 21 28" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/1352db77-a083-4038-ae17-9082ebe4fb06">
 
 ## TODO'S
 
@@ -55,113 +61,6 @@ Design and develop an ecommerce store using Next.js. It should have the followin
 
 This project is to build an Ecommerce store on your own - don't use an all-in-one solution like [Next.js Commerce](https://nextjs.org/commerce).
 
-## Cookies
 
-- Use a cookie called `cart` to store information about what the user has added to their cart
-  - Security: Prevent the user from making changes to cart data they shouldn't be able to (eg. prices). Remember: users can edit any information that is in the cookie.
-
-## Database
-
-- Create a PostgreSQL database and table(s)
-- Connect to and query information from this database
-
-## TypeScript / JSDoc
-
-- Write at least 2 pages with props and 4 other non-migration, non-database files in TypeScript (type the React props like in [the cheatsheet](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-typescript-jsdoc/))
-
-## Tests
-
-This project should also include tests written for the following functionality:
-
-- E2E: Add to cart, change quantity and remove from cart
-- E2E: Checkout flow, payment page, thank you page
-- Unit: Test functions for adding and removing info from cookie
-- Unit: Test function for updating quantity in item of cookie (eg. adding an item to the cart that already exists)
-- Unit: Test cart sum function
-- Set up GitHub Actions to automatically test your code
-
-## SEO
-
-- Add titles to all pages
-- Add meta descriptions to all pages
-
-## Deploying
-
-- Deploy to [Fly.io](https://fly.io/) ([cheatsheet](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-deployment/#deploying-a-nextjs--postgresql-app-to-flyio))
-
-## Documentation
-
-- Create a readme with:
-  - Title
-  - Description
-  - List of all technologies used
-  - 1 or 2 screenshots
-  - Setup instructions
-  - Deployment instructions
-
-## Stretch goals
-
-- Allow changing quantity of items in the cart
-- Add a unique `slug` to each product to allow for URLs like `/products/<product slug>`
-  - Also change all of the `data-test-id` attributes on all pages to use the `slug` instead of the `id`, eg. on the Products page, `data-test-id="product-<product slug>"`
-  - A `slug` is a URL-friendly string that is used to identify a product (eg. "apple-iphone-11-pro-max") - hyphens instead of spaces, all lowercase, no special characters
-- Add validation for data entered by the user
-  - Add frontend validation with error messages
-  - Add server-side validation to check the information being submitted by the user and return errors
-  - Write unit test for server-side validation functions
-- Save the cart data to a database table in addition to a cookie (eg. using a join table)
-- Add search functionality
-- Make authentication system with users
-- Allow admin login to edit and delete products
-- Use Next.js API routes for returning information from the database
-- Use GraphQL to send information between React and the backend
-- Set up Stripe as a payment handler between the Checkout and Thank You page
-  - Don't skip creating the full Checkout page, including all shipping and payment form fields - this is still a required part of the project
-  - To add Stripe to the checkout page, a button or anchor element should be visible with the HTML attribute `data-test-id="stripe-pay"`
-  - Clicking on this button should send the user to a Stripe payment form, where it accepts the credit card details (this page needs to accept the `4242 4242 4242 4242` Stripe test card number)
-  - Upon submitting the Stripe payment form, the user needs to be directed to the Thank You page on your website
-- Right after [creating your first (empty) Git commit](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-command-line/#4-create-and-push-an-initial-commit), create a new branch. Use this branch to [open a pull request on GitHub](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-git-github/#opening-pull-requests)
-- Accessibility: Fully keyboard- and screenreader-accessible
-- Create a favicon that identifies your app: (see [Generating and Adding Favicons](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-design-ux/#generating-and-adding-favicons))
-- Test and further improve your SEO (meta tags, performance, image optimization, sitemaps, etc)
-
-## Acceptance Criteria
-
-- [ ] Preflight runs through without errors in your project
-  - [ ] Link in your GitHub repo's About section: Fly.io deployed website
-- [ ] [Drone bot](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-tasks/#upleveled-drone) has been tagged and responded with a passing message
-- [ ] Correct GitHub commit message format (see [Writing Commit Messages](https://learn.upleveled.io/courses/bootcamp-pern/modules/cheatsheet-git-github/#writing-commit-messages))
-
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
