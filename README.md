@@ -1,9 +1,15 @@
-Welcome to the next-js-ecommerce-store wiki!
+<h1>Welcome to the next-js-ecommerce-store wiki!</h1>
+
 <img width="1439" alt="Bildschirmfoto 2023-06-12 um 11 19 57" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/06351861-6a69-4ee8-92d7-44b75f979dea">
+
 <img width="1438" alt="Bildschirmfoto 2023-06-12 um 11 20 09" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/0e21a101-7270-4a56-9a0d-c6d66389f032">
+
 <img width="1437" alt="Bildschirmfoto 2023-06-12 um 11 20 24" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/bd0de8a4-8fb0-46de-80e9-29abbec20c87">
+
 <img width="1437" alt="Bildschirmfoto 2023-06-12 um 11 20 41" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/8fb0919a-5b44-4d67-9e30-99b9862c7841">
+
 <img width="1438" alt="Bildschirmfoto 2023-06-12 um 11 20 52" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/16b6e8e0-ece8-4c78-ab99-434bf7010811">
+
 <img width="1426" alt="Bildschirmfoto 2023-06-12 um 11 21 28" src="https://github.com/stefanselic/next-js-ecommerce-store/assets/129748801/1352db77-a083-4038-ae17-9082ebe4fb06">
 
 ## TODO'S
